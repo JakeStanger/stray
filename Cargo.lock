@@ -675,7 +675,7 @@ version = "0.1.0"
 dependencies = [
  "gtk",
  "once_cell",
- "stray",
+ "system-tray",
  "tokio",
  "tracing-subscriber",
 ]
@@ -1270,22 +1270,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
-name = "stray"
-version = "0.1.3"
-dependencies = [
- "anyhow",
- "byteorder",
- "chrono",
- "log",
- "serde",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tracing",
- "zbus",
-]
-
-[[package]]
 name = "syn"
 version = "1.0.109"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1318,6 +1302,22 @@ dependencies = [
  "pkg-config",
  "toml",
  "version-compare",
+]
+
+[[package]]
+name = "system-tray"
+version = "0.1.4"
+dependencies = [
+ "anyhow",
+ "byteorder",
+ "chrono",
+ "log",
+ "serde",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "tracing",
+ "zbus",
 ]
 
 [[package]]
