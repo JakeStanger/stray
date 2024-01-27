@@ -33,18 +33,13 @@ impl StatusNotifierWatcher {
         {
             tracing::info!("Starting notifier watcher");
             let tx = tx.clone();
-
-            tokio::spawn(async move {
-                start_notifier_watcher(tx)
-                    .await
-                    .expect("Unexpected StatusNotifierError");
-            });
+            start_notifier_watcher(tx).await?;
         }
 
         tokio::spawn(async move {
-            dispatch_ui_command(cmd_rx)
-                .await
-                .expect("Unexpected error while dispatching UI command");
+            if let Err(err) = dispatch_ui_command(cmd_rx).await {
+                tracing::error!("Unexpected error while dispatching UI command: {err:?}")
+            }
         });
 
         Ok(StatusNotifierWatcher { tx, _rx: rx })
