@@ -110,7 +110,7 @@ impl NotifierItem {
     }
 
     fn get_icon_from_theme(&self) -> Option<Image> {
-        let theme = gtk::IconTheme::default().unwrap_or(IconTheme::new());
+        let theme = IconTheme::default().unwrap_or_default();
         theme.rescan_if_needed();
 
         if let Some(path) = self.item.icon_theme_path.as_ref() {
