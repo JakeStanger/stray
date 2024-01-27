@@ -1,9 +1,9 @@
-use stray::StatusNotifierWatcher;
+use system_tray::StatusNotifierWatcher;
 use tokio::join;
 use tokio::sync::mpsc;
 
 #[tokio::main]
-async fn main() -> stray::error::Result<()> {
+async fn main() -> system_tray::error::Result<()> {
     let (_cmd_tx, cmd_rx) = mpsc::channel(10);
     let tray = StatusNotifierWatcher::new(cmd_rx).await?;
 
@@ -27,7 +27,7 @@ async fn main() -> stray::error::Result<()> {
         }
 
         host_two.destroy().await?;
-        stray::error::Result::<()>::Ok(())
+        system_tray::error::Result::<()>::Ok(())
     });
 
     let _ = join!(one, two);

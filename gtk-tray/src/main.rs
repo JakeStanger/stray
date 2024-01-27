@@ -5,10 +5,10 @@ use once_cell::sync::Lazy;
 use std::collections::HashMap;
 use std::sync::Mutex;
 use std::thread;
-use stray::message::menu::{MenuType, TrayMenu};
-use stray::message::tray::{IconPixmap, StatusNotifierItem};
-use stray::message::{NotifierItemCommand, NotifierItemMessage};
-use stray::StatusNotifierWatcher;
+use system_tray::message::menu::{MenuType, TrayMenu};
+use system_tray::message::tray::{IconPixmap, StatusNotifierItem};
+use system_tray::message::{NotifierItemCommand, NotifierItemMessage};
+use system_tray::StatusNotifierWatcher;
 use tokio::runtime::Runtime;
 use tokio::sync::mpsc;
 
@@ -18,7 +18,7 @@ struct NotifierItem {
 }
 
 pub struct StatusNotifierWrapper {
-    menu: stray::message::menu::MenuItem,
+    menu: system_tray::message::menu::MenuItem,
 }
 
 static STATE: Lazy<Mutex<HashMap<String, NotifierItem>>> = Lazy::new(|| Mutex::new(HashMap::new()));
