@@ -150,9 +150,9 @@ impl FromStr for Disposition {
     }
 }
 
-impl From<bool> for ToggleState {
-    fn from(value: bool) -> Self {
-        if value {
+impl From<i32> for ToggleState {
+    fn from(value: i32) -> Self {
+        if value == 1 {
             ToggleState::On
         } else {
             ToggleState::Indeterminate
@@ -224,7 +224,7 @@ impl TryFrom<&OwnedValue> for MenuItem {
             }
 
             menu.toggle_state = dict
-                .get::<str, bool>("toggle-state")
+                .get::<str, i32>("toggle-state")
                 .ok()
                 .flatten()
                 .map(|value| ToggleState::from(*value))
