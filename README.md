@@ -1,3 +1,6 @@
+> [!NOTE]
+> Archved in favour of [system-tray](https://github.com/jakestanger/system-tray) rewrite.
+
 # Stray
 
 Stray is a [SystemNotifierWatcher](https://www.freedesktop.org/wiki/Specifications/StatusNotifierItem/StatusNotifierWatcher/)
