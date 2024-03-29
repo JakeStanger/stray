@@ -1,5 +1,5 @@
 > [!NOTE]
-> Archved in favour of [system-tray](https://github.com/jakestanger/system-tray) rewrite.
+> Archived in favour of [system-tray](https://github.com/jakestanger/system-tray) rewrite.
 
 # Stray
 
